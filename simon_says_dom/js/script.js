@@ -9,6 +9,7 @@ const numberListElement = document.getElementById('numbers-list');
 const instructionElement = document.getElementById('instructions');
 const answerFormElement = document.getElementById('answers-form');
 const inputsElement = document.querySelectorAll('input');
+const messageElement = document.getElementById('message');
 //var di gioco
 numberToGuess = 5;
 const number = [];
@@ -54,9 +55,14 @@ if(playTime=== 0){
 //parte dell'utente
 answerFormElement,addEventListener('submit', function(event){
     event.preventDefault();
-
+    let courrentCount = 0;
     for(let i=0; i< inputsElement.length; i++){
 
-    const currentElement = inputsElement[i];
+    const currentElement = parseInt(inputsElement[i].value);
+
+    if (number.includes(currentElement)){
+        courrentCount++;
+    }
+      messageElement.innerText= `Hai indovinato ${courrentCount} numeri su ${numberToGuess}`;  
     } 
 });
