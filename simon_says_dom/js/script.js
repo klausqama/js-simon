@@ -19,6 +19,15 @@ for(let i = 0; i < numberToGuess; i++){
     const randomNumber= generateRandomNumer( 1, 50);
     number.push(randomNumber);
 }
+//ciclo while
+while(number.length<numberToGuess){
+    const randomNumber = generateRandomNumer(1,50);
+
+    if(!number.includes(randomNumber)){
+        number.push(randomNumber);
+    }
+    
+}
 // mostro in numeri 
 for(let i = 0; i < number.length; i++){
     const randomNumber = number[i]
